@@ -20,6 +20,7 @@ int main()
         std::cin >> pin;
         if (pin == password)
         {
+            //This statement show options for the user so that they can choose what to do
             do
             {
             std::cout << "\nOptions Available:\n"
@@ -32,6 +33,7 @@ int main()
             int entry{};
             std::cin >> entry;
 
+            //This sequence of statements represents each option that you can choose
             switch (entry)
             {
             case 1:
@@ -60,7 +62,7 @@ int main()
             } while (isTrue != false);
 
         }
-        else
+        else //Store the number of tries before kicking the user out of the program
         {
             tries ++;
             if (tries == 3)
