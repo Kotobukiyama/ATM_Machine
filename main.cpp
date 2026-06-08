@@ -1,11 +1,23 @@
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
-
 
 int main()
 {
     bool isTrue{true};
-    int password {123};
+    int password {};
+    std::ifstream inFile("password.txt");
+    if (inFile.is_open()) {
+        inFile >> password;
+        inFile.close();
+    } else {
+        std::cout << "Create your PIN: ";
+        std::cin >> password;
+        std::ofstream outFile("password.txt");
+        outFile << password;
+        outFile.close();
+        std::cout << "PIN successfully created!\n";
+    }
     int tries {0};
     double deposit {0.0};
     double balance {0.0};
